@@ -2,6 +2,8 @@ from django.contrib.auth.models import AbstractUser
 from django.core.validators import MinValueValidator
 from django.db import models
 
+from press_portal import settings
+
 
 class Newspaper(models.Model):
     title = models.CharField(max_length=255)
@@ -12,7 +14,10 @@ class Newspaper(models.Model):
         on_delete=models.CASCADE,
         related_name="newspapers",
     )
-    publishers = models.ManyToManyField("Redactor", related_name="newspaper")
+    publishers = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        related_name="newspaper"
+    )
 
     class Meta:
         ordering = ("title", )
