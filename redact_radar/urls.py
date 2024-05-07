@@ -1,8 +1,9 @@
 from django.urls import path
 
+from redact_radar.views import IndexView
 
 urlpatterns = [
-    # path("", Home.as_view(), name="home")
+    path("", IndexView.as_view(), name="index")
 ]
 
 app_name = "redact_radar"

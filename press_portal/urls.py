@@ -20,5 +20,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", include("redact_radar.urls"), namespace="redact_radar")
+    path("", include("redact_radar.urls", namespace="redact_radar"))
 ]
