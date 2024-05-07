@@ -9,9 +9,8 @@ class Newspaper(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
     published_date = models.DateTimeField(auto_now_add=True)
-    dish_type = models.ForeignKey(
+    dish_type = models.ManyToManyField(
         "Topic",
-        on_delete=models.CASCADE,
         related_name="newspapers",
     )
     publishers = models.ManyToManyField(
@@ -38,7 +37,8 @@ class Topic(models.Model):
 
 class Redactor(AbstractUser):
     years_of_experience = models.IntegerField(
-        validators=[MinValueValidator(0)]
+        validators=[MinValueValidator(0)],
+        default=0
     )
 
     class Meta:
