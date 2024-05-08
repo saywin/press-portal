@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block style %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+{% endblock %}
+
 {% block content %}
 	<main>
 		<div class="background-img-main">
@@ -21,9 +25,11 @@
 				<p>{{ context.num_redactors }}</p>
 				<h1>Redactors</h1>
 			</div>
-				<input class="btn-main" type="submit" value="List Newspaper">
-
-
+				<div class="btn-main">
+					<a href="{% url "redact_radar:newspaper-list" %}">
+					List Newspaper
+				</a>
+				</div>
 		</div>
 	</main>
 {% endblock %}

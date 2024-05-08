@@ -1,5 +1,6 @@
 body {
     background-image: url("../img/newspaper-list.jpg");
+    user-select: none;
 }
 
 .article-item {
@@ -26,42 +27,15 @@ body {
     font-family: "Comic Sans MS";
 }
 
+.article-name a:hover{
+    background-color: #1992e3;
+    border-radius: 4px;
+}
+
 .content {
     padding: 20px;
 }
 
-.article-bottom {
-    display: flex;
-    align-items: center;
-    margin-top: 25px;
-
-}
-
-.article-viewed {
-    margin-right: 10px;
-}
-
-.article-viewed span {
-    margin-right: 5px;
-}
-
-.btn {
-    padding: 8px 16px;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #218838;
-}
-
-.ml-auto {
-    margin-left: auto;
-}
 
 .container{
     width: 100%;
@@ -73,11 +47,13 @@ body {
 .container-cards {
     display: grid;
     width: 100%;
-    grid-template-columns: auto;
+    grid-template-columns: repeat(1, 300px);
+    justify-content: center;
+    justify-items: center;
 }
 
 .pagination .page-item.active .page-link {
-    background-color: #28a745; /* колір фону */
+    background-color: #28a745;
     border-color: #007bff;
     color: #fff;
 }
