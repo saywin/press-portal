@@ -75,3 +75,13 @@ body {
     width: 100%;
     grid-template-columns: auto;
 }
+
+.pagination .page-item.active .page-link {
+    background-color: #28a745; /* колір фону */
+    border-color: #007bff; /* колір рамки (необов'язково, якщо вона існує) */
+    color: #fff; /* колір тексту */
+}
+
+.page-link {
+    color: black;
+}
