@@ -2,6 +2,14 @@ body {
     background-image: url("../img/newspaper-list.jpg");
 }
 
+.row h1{
+    text-align: center;
+    font-family: "Comic Sans MS";
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
+}
+
 .article-item {
     display: block;
     margin: 10px 10px 10px 10px;
