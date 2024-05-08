@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+	<main>
+		<div class="background-img-main">
+			<img width="100%" src="{% static "img/main.jpg" %}" class="background"/>
+			<div class="main-text">
+				<h1>PressPortal</h1>
+				<p>The best newspapers in the world</p>
+			</div>
+			<div class="text-count table-main-1">
+				<p>{{ context.num_newspapers }}</p>
+				<h1>Newspapers</h1>
+			</div>
+			<div class="text-count table-main-2">
+				<p>{{ context.num_topics }}</p>
+				<h1>Topics</h1>
+			</div>
+			<div class="text-count table-main-3">
+				<p>{{ context.num_redactors }}</p>
+				<h1>Redactors</h1>
+			</div>
+				<input class="btn-main" type="submit" value="List Newspaper">
+
+
+		</div>
+	</main>
+{% endblock %}
