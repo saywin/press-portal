@@ -15,4 +15,9 @@ class IndexView(generic.ListView):
         }
 
 
+class NewspaperList(generic.ListView):
+    model = Newspaper
+    template_name = "redact_radar/newspaper_list.html"
+    context_object_name = "newspaper_list"
+    paginate_by = 3
 
