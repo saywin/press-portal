@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="container">
+	<div class="row">
+	{% for newspaper in newspaper_list %}
+		<div class="container-cards">
+		<div class="article-item">
+			<div>
+				<div>
+					<div class="article-name">
+						<a href="#">› {{ newspaper.title }}</a>
+					</div>
+					<p class="content">{{ newspaper.content|truncatechars:120 }}</p>
+					<div class="article-bottom">
+						<div class="article-viewed">
+							<span>📅 {{ newspaper.published_date }}</span>
+						</div>
+						<a href="#" class="btn btn-success ml-auto">Read Сompletely »</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+</div>
+{% endblock %}
+
+

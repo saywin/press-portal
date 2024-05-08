@@ -1,3 +1,5 @@
+
+
 main {
     user-select: none;
 }
@@ -8,7 +10,7 @@ main {
 
 .main-text h1 {
     position: absolute;
-    left: 42%;
+    left: 40%;
     bottom: 85%;
     font-size: 60px;
     font-weight: bold;
