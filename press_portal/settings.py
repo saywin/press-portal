@@ -128,3 +128,5 @@ AUTH_USER_MODEL = "redact_radar.Redactor"
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+LOGIN_REDIRECT_URL = "/newspaper/"
