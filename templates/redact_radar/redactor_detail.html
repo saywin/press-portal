@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block style %}
+		<link rel="stylesheet" href="{% static "css/redactor_detail.css" %}">
+{% endblock %}
+
+{% block content %}
+	<div class="container">
+	<div class="row">
+		<h1>Redactor Detail:</h1>
+		<div class="container-cards">
+		<div class="article-item">
+			<div>
+				<div>
+					<div class="article-name">
+						<h1>Username: {{ redactor.username }}</h1>
+						<p>First_name: {{ redactor.first_name }}</p>
+						<hr>
+						<p>Last_name: {{ redactor.last_name }}</p>
+						<hr>
+						<p>Email: {{ redactor.email }}</p>
+						<hr>
+						<p>Years of experience: {{ redactor.years_of_experience }}</p>
+						<hr>
+						<p>Newspapers are published: {{ redactor.newspaper.count }}</p>
+		</div>
+</div>
+{% endblock %}
+
+

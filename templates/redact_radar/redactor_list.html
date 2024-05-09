@@ -2,25 +2,39 @@
 {% load static %}
 
 {% block style %}
-		<link rel="stylesheet" href="{% static "css/redactor_list.css" %}">
+	<link rel="stylesheet" href="{% static "css/redactor_list.css" %}">
 {% endblock %}
 
 {% block content %}
 	<div class="container">
 	<div class="row">
-		<h1>Redactors:</h1>
+	<h1>Redactors:</h1>
 	{% for redactor in redactor_list %}
 		<div class="container-cards">
 		<div class="article-item">
 			<div>
 				<div>
 					<div class="article-name">
-						<a href="#">› {{ redactor.username }}</a>
+						<a href="{% url "redact_radar:redactor-detail" pk=redactor.pk %}">
+							› {{ redactor.username }}
+						</a>
 					</div>
-					<p class="content"><span>Full Name:</span>  {{ redactor.first_name }} {{ redactor.last_name }}</p>
-					<p class="content"><span>Years of experience:</span>  {{ redactor.years_of_experience }}</p>
+					<p class="content">
+						<span>
+							Full Name:
+						</span>
+						{{ redactor.first_name }}
+						{{ redactor.last_name }}
+					</p>
+					<p class="content">
+						<span>Years of experience:</span>
+						{{ redactor.years_of_experience }}
+					</p>
 					<div class="article-bottom">
-						<a href="#" class="btn btn-success ml-auto">Details »</a>
+						<a href="{% url "redact_radar:redactor-detail" pk=redactor.pk %}"
+						   class="btn btn-success ml-auto">
+							Details »
+						</a>
 					</div>
 				</div>
 			</div>

@@ -1,0 +1,99 @@
+body {
+    background-image: url("../img/newspaper-list.jpg");
+}
+
+.row h1{
+    text-align: center;
+    font-family: "Comic Sans MS";
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
+}
+
+
+.article-item {
+    display: block;
+    margin: 10px 10px 10px 10px;
+    border: #1992e3 2px solid;
+    width: 100%;
+    border-radius: 5px;
+    background: linear-gradient(#9ca3dc, #6b778f);
+    text-align: center;
+    padding: 10px;
+}
+
+.article-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.article-name a {
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: none;
+    font-family: "Comic Sans MS";
+}
+
+
+.article-name p {
+    text-align: left;
+    font-size: 30px;
+    padding: 5px;
+}
+
+
+hr {
+    color: #0c639d;
+}
+
+
+/*.content {*/
+/*    padding: 20px;*/
+/*}*/
+
+/*.article-bottom {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    margin-top: 25px;*/
+
+/*}*/
+
+/*.article-viewed {*/
+/*    margin-right: 10px;*/
+/*}*/
+
+/*.article-viewed span {*/
+/*    margin-right: 5px;*/
+/*}*/
+
+/*.btn {*/
+/*    padding: 8px 16px;*/
+/*    background-color: #28a745;*/
+/*    color: #fff;*/
+/*    border: none;*/
+/*    border-radius: 4px;*/
+/*    text-decoration: none;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.btn:hover {*/
+/*    background-color: #218838;*/
+/*}*/
+
+/*.ml-auto {*/
+/*    margin-left: auto;*/
+/*}*/
+
+.container{
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 5px;
+    margin: 0 auto;
+}
+
+.container-cards {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto;
+}
