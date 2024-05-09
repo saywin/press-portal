@@ -33,6 +33,11 @@ class TopicListView(generic.ListView):
     paginate_by = 4
 
 
+class TopicDetailView(generic.DetailView):
+    model = Topic
+
+
+
 class RedactorListView(generic.ListView):
     model = Redactor
     template_name = "redact_radar/redactor_list.html"
