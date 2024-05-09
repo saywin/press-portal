@@ -52,6 +52,8 @@ class TopicListView(generic.ListView):
     template_name = "redact_radar/topic_list.html"
     context_object_name = "topic_list"
     paginate_by = 4
+    queryset = Topic.objects.prefetch_related("newspapers")
+
 
 
 class TopicDetailView(generic.DetailView):
