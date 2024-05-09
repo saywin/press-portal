@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "redact_radar",
+    "crispy_forms",
+    "crispy_bootstrap4"
     "debug_toolbar",
 ]
 
@@ -134,3 +136,6 @@ INTERNAL_IPS = [
 LOGIN_REDIRECT_URL = "/newspaper/"
 LOGIN_URL = reverse_lazy("login")
 LOGOUT_URL = reverse_lazy("logout")
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
