@@ -14,7 +14,25 @@ body {
     text-align: center;
 }
 
-.btn-success {
+.form-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.crispy-form {
+    width: 30%; /* Змінюємо ширину форми на 50% */
+    padding: 20px;
+    background: linear-gradient(#08a2a2, #0df5f5);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 2;
+}
+
+.btn-success, .btn-primary {
     font-size: 20px;
     margin-top: 10%;
 }

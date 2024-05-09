@@ -13,7 +13,7 @@
 
 {% block content %}
 	<div class="form-login">
-		<form action="{% url "login" %}" method="post">
+		<form class="crispy-form" action="{% url "login" %}" method="post">
 			{% csrf_token %}
 			{{ form|crispy }}
 			<input type="submit" value="Submit" class="btn btn-primary">
