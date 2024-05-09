@@ -38,9 +38,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "redact_radar",
+    "debug_toolbar",
     "crispy_forms",
     "crispy_bootstrap4"
-    "debug_toolbar",
 ]
 
 MIDDLEWARE = [
@@ -138,4 +138,4 @@ LOGIN_URL = reverse_lazy("login")
 LOGOUT_URL = reverse_lazy("logout")
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
-
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
