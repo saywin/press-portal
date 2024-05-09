@@ -36,7 +36,7 @@
 					{% endfor %}
 				</p>
 				{% for redactor in newspaper.publishers.all %}
-					<a href="#"
+					<a href="{% url "redact_radar:redactor-detail" pk=redactor.pk %}"
 					   class="ml-auto">
 						{{ redactor.username }} » <br>
 						({{ redactor.first_name }} {{ redactor.last_name }})
