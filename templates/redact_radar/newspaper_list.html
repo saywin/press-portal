@@ -22,7 +22,10 @@
 						<div class="article-viewed">
 							<span>📅 {{ newspaper.published_date }}</span>
 						</div>
-						<a href="#" class="btn btn-success ml-auto">Read Сompletely »</a>
+						<a href="{% url "redact_radar:newspaper-detail" pk=newspaper.id %}"
+								class="btn btn-success ml-auto">
+							Read Сompletely »
+						</a>
 					</div>
 				</div>
 			</div>
