@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block style %}
+	<link rel="stylesheet" href="{% static "css/topic_detail.css" %}">
+{% endblock %}
+
+{% block content %}
+	<div class="container">
+	<div class="row">
+	<h1>Topic Detail:</h1>
+	<div class="container-cards">
+	<div class="article-item">
+	<div>
+		<div>
+			<div class="article-name">
+				<h1>{{ topic.name }}</h1>›
+			</div>
+			<p class="content">Newspapers in this topic: {{ topic.newspapers.count }}</p>
+			{% for newspaper in topic.newspapers.all %}
+				<div class="article-bottom">
+					<a href="{% url "redact_radar:newspaper-detail" pk=newspaper.pk %}"
+					   class="ml-auto">
+						{{ newspaper.title }} »
+						<hr>
+					</a>
+				</div>
+			{% endfor %}
+
+
+		</div>
+	</div>
+{% endblock %}
+
+

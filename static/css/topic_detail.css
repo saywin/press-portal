@@ -1,0 +1,91 @@
+body {
+    background-image: url("../img/newspaper-list.jpg");
+}
+
+.row h1{
+    text-align: center;
+    font-family: "Comic Sans MS";
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
+}
+
+.article-item {
+    display: block;
+    margin: 10px 10px 10px 10px;
+    border: #1992e3 2px solid;
+    width: 100%;
+    border-radius: 5px;
+    background: linear-gradient(#9ca3dc, #6b778f);
+    text-align: center;
+    padding: 10px;
+}
+
+.article-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.article-name h1 {
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: none;
+    font-family: "Comic Sans MS";
+}
+
+.content {
+    font-size: 22px;
+    font-family: "David Libre";
+    font-weight: bold;
+    padding: 20px;
+}
+
+.article-bottom {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+
+}
+
+.article-viewed {
+    margin-right: 10px;
+}
+
+.article-viewed span {
+    margin-right: 5px;
+    font-size: 17px;
+}
+
+
+.ml-auto {
+    margin: auto;
+    font-size: 25px;
+    color: black;
+    padding: 5px;
+}
+
+.mr-auto {
+    margin-left: 21%;
+    font-size: 20px;
+    border-bottom: #06f827 2px solid;
+}
+
+.container{
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 5px;
+    margin: 0 auto;
+}
+
+.container-cards {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto;
+}
+
+
+.ml-auto:hover{
+    background-color: #28a745;
+    border-radius: 4px;
+}

@@ -11,10 +11,10 @@
 		<div class="container-cards">
 		<div class="article-item">
 			<div class="article-name">
-				<a href="#">› {{ topic.name }} ‹</a>
+				<a href="{% url "redact_radar:topic-detail" pk=topic.pk %}">› {{ topic.name }} ‹</a>
 			</div>
 			<p class="content">Newspapers in this topic: {{ topic.newspapers.count }}</p>
-			<a href="#"
+			<a href="{% url "redact_radar:topic-detail" pk=topic.pk %}"
 			   class="btn btn-success ml-auto">
 				Detail »
 			</a>
