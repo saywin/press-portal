@@ -1,0 +1,34 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: white;
+    background-image: url("../img/newspaper-list.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.title {
+    color: white;
+    font-size: 40px;
+    font-family: "Comic Sans MS";
+    float: left;
+}
+
+.crispy-form {
+    width: 50%; /* Змінюємо ширину форми на 50% */
+    padding: 0px;
+    background: linear-gradient(#9ca3dc, #6b778f);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 2;
+    margin: 0 auto;
+}
+
+.btn-primary {
+    margin-left: 80%;
+}

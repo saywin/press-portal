@@ -2,41 +2,50 @@
 {% load static %}
 
 {% block style %}
-		<link rel="stylesheet" href="{% static "css/newspaper_detail.css" %}">
+	<link rel="stylesheet" href="{% static "css/newspaper_detail.css" %}">
 {% endblock %}
 
 {% block content %}
 	<div class="container">
 	<div class="row">
-		<h1>Newspaper Detail:</h1>
-		<div class="container-cards">
-		<div class="article-item">
-			<div>
-				<div>
-					<div class="article-name">
-						<h1>{{ newspaper.title }}</h1>›
-					</div>
-					<p class="content">{{ newspaper.content}}</p>
-					<div class="article-bottom">
-						<div class="article-viewed">
-							<span>📅 {{ newspaper.published_date }}</span>
+	<h1>Newspaper Detail:
+		<a class="btn btn-success"
+		   href="{% url "redact_radar:newspaper-update" pk=newspaper.pk %}">
+			Update
+		</a>
+		<a class="btn btn-danger"
+		   href="{% url "redact_radar:newspaper-delete" pk=newspaper.pk %}">
+			Delete
+		</a>
+	</h1>
+	<div class="container-cards">
+	<div class="article-item">
+	<div>
+		<div>
+			<div class="article-name">
+				<h1>{{ newspaper.title }}</h1>›
+			</div>
+			<p class="content">{{ newspaper.content }}</p>
+			<div class="article-bottom">
+				<div class="article-viewed">
+					<span>📅 {{ newspaper.published_date }}</span>
 				</div>
-					<p class="mr-auto">Topic:
-						{% for topic in newspaper.dish_type.all %}
-							›{{ topic.name }}
-						{% endfor %}
-					 </p>
-						{% for redactor in newspaper.publishers.all %}
-						<a href="#"
-								class="ml-auto">
-							{{ redactor.username }} » <br>
+				<p class="mr-auto">Topic:
+					{% for topic in newspaper.dish_type.all %}
+						›{{ topic.name }}
+					{% endfor %}
+				</p>
+				{% for redactor in newspaper.publishers.all %}
+					<a href="#"
+					   class="ml-auto">
+						{{ redactor.username }} » <br>
 						({{ redactor.first_name }} {{ redactor.last_name }})
-						</a>
-						{% endfor %}
+					</a>
+				{% endfor %}
 
 			</div>
 		</div>
-</div>
+	</div>
 {% endblock %}
 
 
