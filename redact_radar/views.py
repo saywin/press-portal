@@ -1,3 +1,4 @@
+from django.urls import reverse_lazy
 from django.views import generic
 
 from redact_radar.models import Newspaper, Topic, Redactor
@@ -20,6 +21,26 @@ class NewspaperListView(generic.ListView):
     template_name = "redact_radar/newspaper_list.html"
     context_object_name = "newspaper_list"
     paginate_by = 3
+
+
+class NewspaperCreateView(generic.CreateView):
+    model = Newspaper
+    fields = "__all__"
+    template_name = "redact_radar/newspaper_form.html"
+    success_url = reverse_lazy("redact_radar:newspaper_list")
+
+
+class NewspaperUpdateView(generic.UpdateView):
+    model = Newspaper
+    fields = "__all__"
+    template_name = "redact_radar/newspaper_form.html"
+    success_url = reverse_lazy("redact_radar:newspaper_list")
+
+
+class NewspaperDeleteView(generic.DeleteView):
+    model = Newspaper
+    success_url = reverse_lazy("redact_radar:newspaper_list")
+    template_name = "redact_radar/newspaper_confirm_delete.html"
 
 
 class NewspaperDetailView(generic.DetailView):
