@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block style %}
+	<link rel="stylesheet" href="{% static "css/login.css" %}">
+{% endblock %}
+
+{% block content %}
+	{% csrf_token %}
+	<div class="logout">
+		<p class="logout-text">Logged Out</p>
+		<a class="btn btn-success" href="{% url "login" %}">Click here to log again</a>
+	</div>
+{% endblock %}

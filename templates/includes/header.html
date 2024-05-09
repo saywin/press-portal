@@ -1,24 +1,35 @@
 <header class="header">
-		<div class="header-section">
-			<div class=" header-logo">
-				PressPortal
-			</div>
-			<div class="header-item header-btn">
-				<a href="{% url "redact_radar:index" %}">Home</a>
-			</div>
-			<div class="header-item header-btn">
-				<a href="{% url "redact_radar:newspaper-list" %}">All Newspapers</a>
-			</div>
-			<div class="header-item header-btn">
-				<a href="{% url "redact_radar:topic-list" %}">All Topics</a>
-			</div>
-			<div class="header-item header-btn">
-				<a href="{% url "redact_radar:redactor-list" %}">All Redactor</a>
-			</div>
+	<div class="header-section">
+		<div class=" header-logo">
+			PressPortal
 		</div>
-		<div class="header-section">
-			<div class="header-item header-btn">
+		<div class="header-item header-btn">
+			<a href="{% url "redact_radar:index" %}">Home</a>
+		</div>
+		<div class="header-item header-btn">
+			<a href="{% url "redact_radar:newspaper-list" %}">All Newspapers</a>
+		</div>
+		<div class="header-item header-btn">
+			<a href="{% url "redact_radar:topic-list" %}">All Topics</a>
+		</div>
+		<div class="header-item header-btn">
+			<a href="{% url "redact_radar:redactor-list" %}">All Redactor</a>
+		</div>
+	</div>
+	<div class="header-section">
+		{% if user.is_authenticated %}
+			<a href="{% url "redact_radar:redactor-detail" pk=user.pk %}"
+			   class="header-item header-btn">
+				{{ user.username }}
+			</a>
+			<form action="{% url 'logout' %}" method="post">
+				{% csrf_token %}
+				<button type="submit" class="btn-sm logout-btn">Logout</button>
+			</form>
+		{% else %}
+			<a class="header-item header-btn" href="{% url "login" %}">
 				Log In
-			</div>
-		</div>
-	</header>
+			</a>
+		{% endif %}
+	</div>
+</header>

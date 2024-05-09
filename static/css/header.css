@@ -34,6 +34,20 @@ header {
     cursor: pointer;
 }
 
+.logout-btn {
+    padding: 8px 16px;
+    background-color: #ab031c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #60031b;
+}
+
 .header-logo {
     color: #000000;
     font-weight: bold;
