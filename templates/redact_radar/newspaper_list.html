@@ -8,7 +8,12 @@
 {% block content %}
 	<div class="container">
 	<div class="row">
-		<h1>Newspapers:</h1>
+		<h1>Newspapers:
+			<a class="btn"
+			   href="{% url "redact_radar:newspaper-create" %}">
+				Create Newspaper
+			</a>
+		</h1>
 	{% for newspaper in newspaper_list %}
 		<div class="container-cards">
 		<div class="article-item">
@@ -30,7 +35,9 @@
 				</div>
 			</div>
 		</div>
+
 	{% endfor %}
+
 </div>
 {% endblock %}
 
