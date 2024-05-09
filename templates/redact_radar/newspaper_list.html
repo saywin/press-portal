@@ -15,7 +15,7 @@
 			<div>
 				<div>
 					<div class="article-name">
-						<a href="#">› {{ newspaper.title }}</a>
+						<a href="{% url "redact_radar:newspaper-detail" pk=newspaper.pk %}">› {{ newspaper.title }}</a>
 					</div>
 					<p class="content">{{ newspaper.content|truncatechars:120 }}</p>
 					<div class="article-bottom">

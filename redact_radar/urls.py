@@ -6,14 +6,17 @@ from redact_radar.views import (
     TopicListView,
     RedactorListView,
     NewspaperDetailView,
+    TopicDetailView,
 )
 
 urlpatterns = [
     path("", IndexView.as_view(), name="index"),
     path("newspaper/", NewspaperListView.as_view(), name="newspaper-list"),
+    path("newspaper/<int:pk>/", NewspaperDetailView.as_view(), name="newspaper-detail"),
     path("topic/", TopicListView.as_view(), name="topic-list"),
+    path("topic/<int:pk>/", TopicDetailView.as_view(), name="topic-detail"),
     path("redactor/", RedactorListView.as_view(), name="redactor-list"),
-    path("newspaper/<int:pk>/", NewspaperDetailView.as_view(), name="newspaper-detail")
+
 ]
 
 app_name = "redact_radar"

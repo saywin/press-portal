@@ -10,12 +10,17 @@
 	{% for topic in topic_list %}
 		<div class="container-cards">
 		<div class="article-item">
-					<div class="article-name">
-						<a href="#">› {{ topic.name }} ‹</a>
-					</div>
-					<p class="content">Newspapers in this topic: {{ topic.newspapers.count }}</p>
+			<div class="article-name">
+				<a href="#">› {{ topic.name }} ‹</a>
+			</div>
+			<p class="content">Newspapers in this topic: {{ topic.newspapers.count }}</p>
+			<a href="#"
+			   class="btn btn-success ml-auto">
+				Detail »
+			</a>
 		</div>
 	{% endfor %}
+
 </div>
 {% endblock %}
 

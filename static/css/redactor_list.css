@@ -35,10 +35,10 @@ body {
     font-family: "Comic Sans MS";
 }
 
-.article-name a:hover{
-    background-color: #1992e3;
-    border-radius: 4px;
-}
+/*.article-name a:hover{*/
+/*    background-color: #1992e3;*/
+/*    border-radius: 4px;*/
+/*}*/
 
 .article-bottom {
     display: flex;

@@ -19,7 +19,7 @@ body {
     border-radius: 5px;
     background: linear-gradient(#9ca3dc, #6b778f);
     text-align: center;
-    padding: 10px;
+    padding: 8px;
 }
 
 .article-item img {
@@ -35,13 +35,13 @@ body {
     font-family: "Comic Sans MS";
 }
 
-.article-name a:hover{
-    background-color: #1992e3;
-    border-radius: 4px;
-}
+/*.article-name a:hover{*/
+/*    background-color: #1992e3;*/
+/*    border-radius: 4px;*/
+/*}*/
 
 .content {
-    padding: 20px;
+    padding: 15px;
 }
 
 
