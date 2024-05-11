@@ -9,17 +9,17 @@ class Newspaper(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
     published_date = models.DateTimeField(auto_now_add=True)
-    dish_type = models.ManyToManyField(
-        "Topic",
-        related_name="newspapers",
-    )
     publishers = models.ManyToManyField(
         settings.AUTH_USER_MODEL,
         related_name="newspaper"
     )
+    dish_type = models.ManyToManyField(
+        "Topic",
+        related_name="newspapers",
+    )
 
     class Meta:
-        ordering = ("title", )
+        ordering = ("title",)
 
     def __str__(self):
         return f"title: {self.title}, topic: {self.dish_type}"
@@ -29,7 +29,7 @@ class Topic(models.Model):
     name = models.CharField(max_length=255)
 
     class Meta:
-        ordering = ("name", )
+        ordering = ("name",)
 
     def __str__(self):
         return self.name
@@ -42,7 +42,7 @@ class Redactor(AbstractUser):
     )
 
     class Meta:
-        ordering = ("username", )
+        ordering = ("username",)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name} ({self.username})"

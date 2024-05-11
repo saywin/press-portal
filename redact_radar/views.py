@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy
 from django.views import generic
 
-from redact_radar.forms import RedactorCreateForm, RedactorUpdateForm, NewspaperCreateForm
+from redact_radar.forms import RedactorCreateForm, RedactorUpdateForm, NewspaperCreateForm, NewspaperSearchForm
 from redact_radar.models import Newspaper, Topic, Redactor
 
 
@@ -22,6 +22,11 @@ class NewspaperListView(generic.ListView):
     template_name = "redact_radar/newspaper_list.html"
     context_object_name = "newspaper_list"
     paginate_by = 3
+
+    def get_context_data(self,*, object_list=None, **kwargs):
+        context = super(NewspaperListView, self).get_context_data(**kwargs)
+        context["search_form"] = NewspaperSearchForm()
+        return context
 
 
 class NewspaperCreateView(generic.CreateView):

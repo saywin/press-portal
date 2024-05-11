@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 
-from redact_radar.models import Redactor, Newspaper
+from redact_radar.models import Redactor, Newspaper, Topic
 
 
 class CustomCheckboxField(forms.ModelMultipleChoiceField):
@@ -29,15 +29,24 @@ class RedactorUpdateForm(forms.ModelForm):
 
 
 class NewspaperCreateForm(forms.ModelForm):
-    dish_type = CustomCheckboxField(
-        queryset=get_user_model().objects.all(),
-        required=False
+    dish_type = forms.ModelMultipleChoiceField(
+        queryset=Topic.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
     )
-    publishers = CustomCheckboxField(
+    publishers = forms.ModelChoiceField(
         queryset=get_user_model().objects.all(),
-        required=False
+        widget=forms.Select(),
     )
 
     class Meta:
         model = Newspaper
         fields = "__all__"
+
+
+class NewspaperSearchForm(forms.Form):
+    title = forms.CharField(
+        max_length=255,
+        required=False,
+        label="Title",
+        widget=forms.TextInput(attrs={"placeholder": "Search title"})
+    )
