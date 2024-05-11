@@ -1,6 +1,7 @@
 from django.urls import reverse_lazy
 from django.views import generic
 
+from redact_radar.forms import RedactorCreateForm, RedactorUpdateForm
 from redact_radar.models import Newspaper, Topic, Redactor
 
 
@@ -95,9 +96,11 @@ class RedactorCreateView(generic.CreateView):
     model = Redactor
     form_class = RedactorCreateForm
     template_name = "redact_radar/redactor_form.html"
+    success_url = reverse_lazy("redact_radar:redactor-list")
 
 
 class RedactorUpdateView(generic.UpdateView):
     model = Redactor
     form_class = RedactorUpdateForm
     template_name = "redact_radar/redactor_form.htlm"
+    success_url = reverse_lazy("redact_radar:redactor-list")
