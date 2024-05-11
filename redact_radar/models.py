@@ -11,7 +11,7 @@ class Newspaper(models.Model):
     published_date = models.DateTimeField(auto_now_add=True)
     publishers = models.ManyToManyField(
         settings.AUTH_USER_MODEL,
-        related_name="newspaper"
+        related_name="newspapers"
     )
     dish_type = models.ManyToManyField(
         "Topic",

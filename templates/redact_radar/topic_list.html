@@ -5,28 +5,28 @@
 {% endblock %}
 {% block content %}
 	<div class="container">
-		<div class="row">
-			<div class="title">
-				<h1>Topics:</h1>
-				<a class="btn"
-				   href="{% url "redact_radar:topic-create" %}">
-					Create Topic
-				</a>
+	<div class="row">
+	<div class="title">
+		<h1>Topics:</h1>
+		<a class="btn"
+		   href="{% url "redact_radar:topic-create" %}">
+			Create Topic
+		</a>
+	</div>
+	{% for topic in topic_list %}
+		<div class="container-cards">
+		<div class="article-item">
+			<div class="article-name">
+				<a href="{% url "redact_radar:topic-detail" pk=topic.pk %}">› {{ topic.name }} ‹</a>
 			</div>
-			{% for topic in topic_list %}
-				<div class="container-cards">
-					<div class="article-item">
-						<div class="article-name">
-							<a href="{% url "redact_radar:topic-detail" pk=topic.pk %}">› {{ topic.name }} ‹</a>
-						</div>
-						<p class="content">Newspapers in this topic: {{ topic.newspapers.count }}</p>
-						<a href="{% url "redact_radar:topic-detail" pk=topic.pk %}"
-						   class="btn btn-success ml-auto">
-							Detail »
-						</a>
-					</div>
-				</div>
-			{% endfor %}
+			<p class="content">Newspapers in this topic: {{ topic.newspapers.count }}</p>
+			<a href="{% url "redact_radar:topic-detail" pk=topic.pk %}"
+			   class="btn btn-success ml-auto">
+				Detail »
+			</a>
+		</div>
+	{% endfor %}
 		</div>
 	</div>
+</div>
 {% endblock %}

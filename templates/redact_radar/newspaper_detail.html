@@ -36,11 +36,16 @@
 									{% endfor %}
 								</p>
 								{% for redactor in newspaper.publishers.all %}
-									<a href="{% url "redact_radar:redactor-detail" pk=redactor.pk %}"
-									   class="ml-auto">
-										{{ redactor.username }} » <br>
-										({{ redactor.first_name }} {{ redactor.last_name }})
-									</a>
+									<div class="name-redactors">
+										<ul>
+											<li><a href="{% url "redact_radar:redactor-detail" pk=redactor.pk %}"
+										   class="ml-auto">
+												{{ redactor.first_name }} {{ redactor.last_name }} </a></li>
+										</ul>
+
+
+
+									</div>
 								{% endfor %}
 							</div>
 						</div>

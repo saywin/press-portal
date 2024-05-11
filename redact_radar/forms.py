@@ -33,9 +33,9 @@ class NewspaperCreateForm(forms.ModelForm):
         queryset=Topic.objects.all(),
         widget=forms.CheckboxSelectMultiple,
     )
-    publishers = forms.ModelChoiceField(
+    publishers = forms.ModelMultipleChoiceField(
         queryset=get_user_model().objects.all(),
-        widget=forms.Select(),
+        widget=forms.CheckboxSelectMultiple,
     )
 
     class Meta:

@@ -1,7 +1,12 @@
 from django.urls import reverse_lazy
 from django.views import generic
 
-from redact_radar.forms import RedactorCreateForm, RedactorUpdateForm, NewspaperCreateForm, NewspaperSearchForm
+from redact_radar.forms import (
+    RedactorCreateForm,
+    RedactorUpdateForm,
+    NewspaperCreateForm,
+    NewspaperSearchForm
+)
 from redact_radar.models import Newspaper, Topic, Redactor
 
 
@@ -23,7 +28,7 @@ class NewspaperListView(generic.ListView):
     context_object_name = "newspaper_list"
     paginate_by = 3
 
-    def get_context_data(self,*, object_list=None, **kwargs):
+    def get_context_data(self, *, object_list=None, **kwargs):
         context = super(NewspaperListView, self).get_context_data(**kwargs)
         title = self.request.GET.get("title", "")
         context["search_form"] = NewspaperSearchForm(
@@ -34,7 +39,9 @@ class NewspaperListView(generic.ListView):
     def get_queryset(self):
         form = NewspaperSearchForm(self.request.GET)
         if form.is_valid():
-            return self.model.objects.filter(title__icontains=form.cleaned_data["title"])
+            return self.model.objects.filter(
+                title__icontains=form.cleaned_data["title"]
+            )
         return self.queryset
 
 
@@ -42,19 +49,19 @@ class NewspaperCreateView(generic.CreateView):
     model = Newspaper
     form_class = NewspaperCreateForm
     template_name = "redact_radar/newspaper_form.html"
-    success_url = reverse_lazy("redact_radar:newspaper_list")
+    success_url = reverse_lazy("redact_radar:newspaper-list")
 
 
 class NewspaperUpdateView(generic.UpdateView):
     model = Newspaper
     fields = "__all__"
     template_name = "redact_radar/newspaper_form.html"
-    success_url = reverse_lazy("redact_radar:newspaper_list")
+    success_url = reverse_lazy("redact_radar:newspaper-list")
 
 
 class NewspaperDeleteView(generic.DeleteView):
     model = Newspaper
-    success_url = reverse_lazy("redact_radar:newspaper_list")
+    success_url = reverse_lazy("redact_radar:newspaper-list")
     template_name = "redact_radar/newspaper_confirm_delete.html"
 
 

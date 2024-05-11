@@ -59,7 +59,8 @@ body {
 
 .mr-auto {
     margin-left: 21%;
-    font-size: 20px;
+    font-size: 16px;
+    transition: font-size 0.2s;
 }
 
 .container {
@@ -79,4 +80,15 @@ body {
 .ml-auto:hover {
     background-color: #28a745;
     border-radius: 4px;
+}
+
+
+.article-bottom {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.name-redactors {
+    margin-left: auto;
 }
