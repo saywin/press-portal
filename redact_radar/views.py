@@ -89,3 +89,13 @@ class RedactorListView(generic.ListView):
 
 class RedactorDetailView(generic.DetailView):
     model = Redactor
+
+
+class RedactorCreateView(generic.CreateView):
+    model = Redactor
+    form_class = RedactorCreateForm
+    template_name = "redact_radar/redactor_form.html"
+
+
+class RedactorUpdateView(generic.UpdateView):
+    model = Redactor
