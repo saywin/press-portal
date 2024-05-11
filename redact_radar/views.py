@@ -28,6 +28,12 @@ class NewspaperListView(generic.ListView):
         context["search_form"] = NewspaperSearchForm()
         return context
 
+    def get_queryset(self):
+        form = NewspaperSearchForm(self.request.GET)
+        if form.is_valid():
+            return self.model.objects.filter(title__icontains=form.cleaned_data["title"])
+        return self.queryset
+
 
 class NewspaperCreateView(generic.CreateView):
     model = Newspaper
