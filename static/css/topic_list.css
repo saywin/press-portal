@@ -5,10 +5,10 @@ body {
 
 .title {
     display: flex;
-    justify-content: center; /* Центрує елементи по горизонталі */
+    justify-content: center;
     align-items: center;
     text-align: center;
-    width: 100%; /* Додайте це, щоб забезпечити ширину контейнера */
+    width: 100%;
 }
 
 .title h1{
@@ -16,7 +16,7 @@ body {
     font-size: 45px;
     font-weight: bold;
     color: white;
-    margin: 0; /* Видаляє зовнішні відступи для h1 */
+    margin: 0;
 }
 
 

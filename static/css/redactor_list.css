@@ -3,12 +3,20 @@ body {
     user-select: none;
 }
 
-.row h1{
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    width: 100%;
+}
+
+.title h1{
     font-family: "Comic Sans MS";
     font-size: 45px;
     font-weight: bold;
     color: white;
+    margin: 0;
 }
 
 .article-item {
@@ -60,6 +68,7 @@ body {
 
 .btn:hover {
     background-color: #218838;
+    color: white;
 }
 
 .ml-auto {

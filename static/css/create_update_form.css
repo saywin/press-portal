@@ -18,16 +18,17 @@ body {
 }
 
 .crispy-form {
-    width: 50%; /* Змінюємо ширину форми на 50% */
-    padding: 0px;
+    width: 50%;
+    padding: 0;
     background: linear-gradient(#9ca3dc, #6b778f);
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 18px;
     font-weight: bold;
     line-height: 1;
-    margin: 0 auto;
+    margin: 20px auto 0;
 }
+
 
 .btn-primary {
     margin-left: 90.6%;
