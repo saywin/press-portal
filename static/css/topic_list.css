@@ -3,13 +3,22 @@ body {
     user-select: none;
 }
 
-.row h1{
+.title {
+    display: flex;
+    justify-content: center; /* Центрує елементи по горизонталі */
+    align-items: center;
     text-align: center;
+    width: 100%; /* Додайте це, щоб забезпечити ширину контейнера */
+}
+
+.title h1{
     font-family: "Comic Sans MS";
     font-size: 45px;
     font-weight: bold;
     color: white;
+    margin: 0; /* Видаляє зовнішні відступи для h1 */
 }
+
 
 .article-item {
     display: block;
@@ -21,6 +30,7 @@ body {
     text-align: center;
     padding: 8px;
 }
+
 
 .article-item img {
     max-width: 100%;
@@ -35,10 +45,21 @@ body {
     font-family: "Comic Sans MS";
 }
 
-/*.article-name a:hover{*/
-/*    background-color: #1992e3;*/
-/*    border-radius: 4px;*/
-/*}*/
+.btn {
+    padding: 8px 16px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #218838;
+    color: white;
+}
+
 
 .content {
     padding: 15px;
