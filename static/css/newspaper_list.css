@@ -2,12 +2,28 @@ body {
     background-image: url("../img/newspaper-list.jpg");
 }
 
+.title {
+    display: flex;
+    align-items: center;
+}
+
 .row h1 {
-    text-align: center;
+    text-align: left;
     font-family: "Comic Sans MS";
     font-size: 45px;
     font-weight: bold;
     color: white;
+    margin-right: auto;
+}
+
+.form-inline {
+    display: flex;
+    margin-left: 20px;
+    align-items: center;
+}
+
+.form-inline input[type="submit"] {
+    margin-left: 10px;
 }
 
 
@@ -68,7 +84,6 @@ body {
 .btn:hover {
     background-color: #218838;
 }
-
 
 .ml-auto {
     margin-left: auto;

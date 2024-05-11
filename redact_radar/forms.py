@@ -47,6 +47,6 @@ class NewspaperSearchForm(forms.Form):
     title = forms.CharField(
         max_length=255,
         required=False,
-        label="Title",
+        label="",
         widget=forms.TextInput(attrs={"placeholder": "Search title"})
     )

@@ -1,19 +1,26 @@
 {% extends "base.html" %}
+{% load crispy_forms_filters %}
 {% load static %}
 
 {% block style %}
-		<link rel="stylesheet" href="{% static "css/newspaper_list.css" %}">
+	<link rel="stylesheet" href="{% static "css/newspaper_list.css" %}">
 {% endblock %}
 
 {% block content %}
 	<div class="container">
 	<div class="row">
-		<h1>Newspapers:
+	<div class="title">
+		<h1> Newspapers:
 			<a class="btn"
 			   href="{% url "redact_radar:newspaper-create" %}">
 				Create Newspaper
 			</a>
 		</h1>
+		<form class="form-inline" action="" method="get">
+			{{ search_form|crispy }}
+			<input type="submit" value="🔍" class="btn">
+		</form>
+	</div>
 	{% for newspaper in newspaper_list %}
 		<div class="container-cards">
 		<div class="article-item">
@@ -28,7 +35,7 @@
 							<span>📅 {{ newspaper.published_date }}</span>
 						</div>
 						<a href="{% url "redact_radar:newspaper-detail" pk=newspaper.id %}"
-								class="btn btn-success ml-auto">
+						   class="btn btn-success ml-auto">
 							Read Сompletely »
 						</a>
 					</div>
