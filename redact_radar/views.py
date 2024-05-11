@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy
 from django.views import generic
 
-from redact_radar.forms import RedactorCreateForm, RedactorUpdateForm
+from redact_radar.forms import RedactorCreateForm, RedactorUpdateForm, NewspaperCreateForm
 from redact_radar.models import Newspaper, Topic, Redactor
 
 
@@ -26,7 +26,7 @@ class NewspaperListView(generic.ListView):
 
 class NewspaperCreateView(generic.CreateView):
     model = Newspaper
-    fields = "__all__"
+    form_class = NewspaperCreateForm
     template_name = "redact_radar/newspaper_form.html"
     success_url = reverse_lazy("redact_radar:newspaper_list")
 
