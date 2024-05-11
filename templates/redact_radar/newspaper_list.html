@@ -8,42 +8,43 @@
 
 {% block content %}
 	<div class="container">
-	<div class="row">
-	<div class="title">
-		<h1> Newspapers:
-			<a class="btn"
-			   href="{% url "redact_radar:newspaper-create" %}">
-				Create Newspaper
-			</a>
-		</h1>
-		<form class="form-inline" action="" method="get">
-			{{ search_form|crispy }}
-			<input type="submit" value="🔍" class="btn">
-		</form>
-	</div>
-	{% for newspaper in newspaper_list %}
-		<div class="container-cards">
-		<div class="article-item">
-			<div>
-				<div>
-					<div class="article-name">
-						<a href="{% url "redact_radar:newspaper-detail" pk=newspaper.pk %}">› {{ newspaper.title }}</a>
-					</div>
-					<p class="content">{{ newspaper.content|truncatechars:120 }}</p>
-					<div class="article-bottom">
-						<div class="article-viewed">
-							<span>📅 {{ newspaper.published_date }}</span>
+		<div class="row">
+			<div class="title">
+				<h1> Newspapers:
+					<a class="btn"
+					   href="{% url "redact_radar:newspaper-create" %}">
+						Create Newspaper
+					</a>
+				</h1>
+				<form class="form-inline" action="" method="get">
+					{{ search_form|crispy }}
+					<input type="submit" value="🔍" class="btn">
+				</form>
+			</div>
+			{% for newspaper in newspaper_list %}
+				<div class="container-cards">
+				<div class="article-item">
+					<div>
+						<div>
+							<div class="article-name">
+								<a href="{% url "redact_radar:newspaper-detail" pk=newspaper.pk %}">› {{ newspaper.title }}</a>
+							</div>
+							<p class="content">{{ newspaper.content|truncatechars:120 }}</p>
+							<div class="article-bottom">
+								<div class="article-viewed">
+									<span>📅 {{ newspaper.published_date }}</span>
+								</div>
+								<a href="{% url "redact_radar:newspaper-detail" pk=newspaper.id %}"
+								   class="btn btn-success ml-auto">
+									Read Сompletely »
+								</a>
+							</div>
 						</div>
-						<a href="{% url "redact_radar:newspaper-detail" pk=newspaper.id %}"
-						   class="btn btn-success ml-auto">
-							Read Сompletely »
-						</a>
 					</div>
 				</div>
+
+			{% endfor %}
 			</div>
 		</div>
-
-	{% endfor %}
-
-</div>
+	</div>
 {% endblock %}

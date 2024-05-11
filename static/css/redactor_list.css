@@ -30,11 +30,6 @@ body {
     padding: 10px;
 }
 
-.article-item img {
-    max-width: 100%;
-    height: auto;
-}
-
 .article-name a {
     color: black;
     font-weight: bold;
@@ -43,16 +38,11 @@ body {
     font-family: "Comic Sans MS";
 }
 
-/*.article-name a:hover{*/
-/*    background-color: #1992e3;*/
-/*    border-radius: 4px;*/
-/*}*/
 
 .article-bottom {
     display: flex;
     align-items: center;
     margin-top: 0;
-
 }
 
 
@@ -80,7 +70,6 @@ body {
     padding: 10px;
     font-size: 20px;
     text-align: justify;
-
 }
 
 .content span {
@@ -103,10 +92,12 @@ body {
     justify-items: center;
 }
 
+
 .pagination .page-item.active .page-link {
     background-color: #28a745;
     border-color: #007bff;
     color: #fff;
+    text-align: center;
 }
 
 

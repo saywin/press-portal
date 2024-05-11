@@ -7,44 +7,46 @@
 
 {% block content %}
 	<div class="container">
-	<div class="row">
-	<div class="title">
-		<h1>Redactors:</h1>
-		<a class="btn"
-		   href="{% url "redact_radar:redactor-create" %}">
-			Create Redactor
-		</a>
-	</div>
-	{% for redactor in redactor_list %}
-		<div class="container-cards">
-		<div class="article-item">
-			<div>
-				<div>
-					<div class="article-name">
-						<a href="{% url "redact_radar:redactor-detail" pk=redactor.pk %}">
-							› {{ redactor.username }}
-						</a>
-					</div>
-					<p class="content">
+		<div class="row">
+			<div class="title">
+				<h1>Redactors:</h1>
+				<a class="btn"
+				   href="{% url "redact_radar:redactor-create" %}">
+					Create Redactor
+				</a>
+			</div>
+			{% for redactor in redactor_list %}
+				<div class="container-cards">
+					<div class="article-item">
+						<div>
+							<div>
+								<div class="article-name">
+									<a href="{% url "redact_radar:redactor-detail" pk=redactor.pk %}">
+										› {{ redactor.username }}
+									</a>
+								</div>
+								<p class="content">
 						<span>
 							Full Name:
 						</span>
-						{{ redactor.first_name }}
-						{{ redactor.last_name }}
-					</p>
-					<p class="content">
-						<span>Years of experience:</span>
-						{{ redactor.years_of_experience }}
-					</p>
-					<div class="article-bottom">
-						<a href="{% url "redact_radar:redactor-detail" pk=redactor.pk %}"
-						   class="btn btn-success ml-auto">
-							Details »
-						</a>
+									{{ redactor.first_name }}
+									{{ redactor.last_name }}
+								</p>
+								<p class="content">
+									<span>Years of experience:</span>
+									{{ redactor.years_of_experience }}
+								</p>
+								<div class="article-bottom">
+									<a href="{% url "redact_radar:redactor-detail" pk=redactor.pk %}"
+									   class="btn btn-success ml-auto">
+										Details »
+									</a>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	{% endfor %}
-</div>
+				</div>
+			{% endfor %}
+	</div>
 {% endblock %}

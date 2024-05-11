@@ -32,11 +32,6 @@ body {
 }
 
 
-.article-item img {
-    max-width: 100%;
-    height: auto;
-}
-
 .article-name a {
     color: black;
     font-weight: bold;

@@ -33,27 +33,6 @@ body {
     padding: 10px;
 }
 
-.article-item img {
-    max-width: 100%;
-    height: auto;
-}
-
-/*.btn {*/
-/*    padding: 8px 16px;*/
-/*    background-color: #28a745;*/
-/*    color: #fff;*/
-/*    border: none;*/
-/*    border-radius: 4px;*/
-/*    text-decoration: none;*/
-/*    cursor: pointer;*/
-/*    margin-right: 8px ;*/
-/*}*/
-
-/*.btn:hover {*/
-/*    background-color: #218838;*/
-/*    color: white;*/
-/*}*/
-
 .article-name h1 {
     color: black;
     font-weight: bold;
@@ -76,16 +55,6 @@ body {
 
 }
 
-.article-viewed {
-    margin-right: 10px;
-}
-
-.article-viewed span {
-    margin-right: 5px;
-    font-size: 17px;
-}
-
-
 .ml-auto {
     margin: auto;
     font-size: 25px;
@@ -93,11 +62,6 @@ body {
     padding: 5px;
 }
 
-.mr-auto {
-    margin-left: 21%;
-    font-size: 20px;
-    border-bottom: #06f827 2px solid;
-}
 
 .container{
     width: 100%;

@@ -21,11 +21,6 @@ body {
     padding: 10px;
 }
 
-.article-item img {
-    max-width: 100%;
-    height: auto;
-}
-
 .article-name h1 {
     color: black;
     font-weight: bold;
