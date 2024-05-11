@@ -99,3 +99,5 @@ class RedactorCreateView(generic.CreateView):
 
 class RedactorUpdateView(generic.UpdateView):
     model = Redactor
+    form_class = RedactorUpdateForm
+    template_name = "redact_radar/redactor_form.htlm"
