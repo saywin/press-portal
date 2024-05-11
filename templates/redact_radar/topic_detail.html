@@ -8,7 +8,17 @@
 {% block content %}
 	<div class="container">
 	<div class="row">
-	<h1>Topic Detail:</h1>
+	<div class="title">
+		<h1>Topic Detail:</h1>
+		<a class="btn btn-success"
+		   href="{% url "redact_radar:topic-update" pk=topic.pk %}">
+			Update
+		</a>
+		<a class="btn btn-danger"
+		   href="{% url "redact_radar:topic-delete" pk=topic.pk %}">
+			Delete
+		</a>
+	</div>
 	<div class="container-cards">
 	<div class="article-item">
 	<div>
