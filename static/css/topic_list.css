@@ -55,7 +55,7 @@ body {
 .container-cards {
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(1, 300px);
+    grid-template-columns: repeat(1, 400px);
     justify-content: center;
     justify-items: center;
 }

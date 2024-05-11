@@ -1,20 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
-{% load crispy_forms_filters %}
 
 {% block title %}
 	<title>{{ object|yesno:"Update, Create" }} Newspaper</title>
 {% endblock %}
 
 {% block style %}
-	<link rel="stylesheet" href="{% static "css/newspaper_create.css" %}">
+	<link rel="stylesheet" href="{% static "css/creare_update_form.css" %}">
 {% endblock %}
 
 {% block content %}
 	<h1 class="title">{{ object|yesno:"Update, Create" }} Newspaper: </h1>
-	<form class="crispy-form" action="" method="post" novalidate>
-  {% csrf_token %}
-    {{ form|crispy }}
-    <input class="btn btn-primary" type="submit" value="{{ object|yesno:"Update, Create" }} Newspaper">
-  </form>
+{% include "includes/create_update_form.html" %}
 {% endblock %}

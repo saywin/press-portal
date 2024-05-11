@@ -2,7 +2,7 @@ body {
     background-image: url("../img/newspaper-list.jpg");
 }
 
-.row h1{
+.row h1 {
     text-align: center;
     font-family: "Comic Sans MS";
     font-size: 45px;
@@ -74,7 +74,7 @@ body {
     margin-left: auto;
 }
 
-.container{
+.container {
     width: 100%;
     max-width: 1000px;
     padding: 0 5px;

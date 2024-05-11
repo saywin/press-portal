@@ -27,7 +27,7 @@ urlpatterns = [
     path("topic/<int:pk>/", TopicDetailView.as_view(), name="topic-detail"),
     path("topic/create/", TopicCreateView.as_view(), name="topic-create"),
     path("topic/<int:pk>/update/", TopicUpdateView.as_view(), name="topic-update"),
-    path("newspaper/<int:pk>/delete/", TopicDeleteView.as_view(), name="topic-delete"),
+    path("topic/<int:pk>/delete/", TopicDeleteView.as_view(), name="topic-delete"),
     path("redactor/", RedactorListView.as_view(), name="redactor-list"),
     path("redactor/<int:pk>/", RedactorDetailView.as_view(), name="redactor-detail"),
 

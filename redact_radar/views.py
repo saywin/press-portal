@@ -62,21 +62,21 @@ class TopicDetailView(generic.DetailView):
 
 class TopicCreateView(generic.CreateView):
     model = Topic
-    form_class = "__all_"
+    fields = "__all__"
     template_name = "redact_radar/topic_form.html"
-    success_url = reverse_lazy("redact_radar:topics_list")
+    success_url = reverse_lazy("redact_radar:topic-list")
 
 
 class TopicUpdateView(generic.UpdateView):
     model = Topic
-    form_class = "__all_"
+    fields = "__all__"
     template_name = "redact_radar/topic_form.html"
     success_url = reverse_lazy("redact_radar:topic-list")
 
 
 class TopicDeleteView(generic.DeleteView):
     model = Topic
-    success_url = reverse_lazy("redact_radar:topics_list")
+    success_url = reverse_lazy("redact_radar:topic-list")
     template_name = "redact_radar/topic_confirm_delete.html"
 
 

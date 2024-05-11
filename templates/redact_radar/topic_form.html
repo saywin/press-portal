@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block style %}
+	<link rel="stylesheet" href="{% static "css/creare_update_form.css" %}">
+{% endblock %}
+
+{% block title %}
+	<title>{{ object|yesno:"Update, Create" }} Topic</title>
+{% endblock %}
+
+{% block content %}
+	<h1 class="title">{{ object|yesno:"Update, Create" }} Topic</h1>
+	{% include "includes/create_update_form.html" %}
+{% endblock %}
