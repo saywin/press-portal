@@ -60,6 +60,26 @@ class TopicDetailView(generic.DetailView):
     queryset = Topic.objects.prefetch_related("newspapers")
 
 
+class TopicCreateView(generic.CreateView):
+    model = Topic
+    form_class = "__all_"
+    template_name = "redact_radar/topic_form.html"
+    success_url = reverse_lazy("redact_radar:topics_list")
+
+
+class TopicUpdateView(generic.UpdateView):
+    model = Topic
+    form_class = "__all_"
+    template_name = "redact_radar/topic_form.html"
+    success_url = reverse_lazy("redact_radar:topic-list")
+
+
+class TopicDeleteView(generic.DeleteView):
+    model = Topic
+    success_url = reverse_lazy("redact_radar:topics_list")
+    template_name = "redact_radar/topic_confirm_delete.html"
+
+
 class RedactorListView(generic.ListView):
     model = Redactor
     template_name = "redact_radar/redactor_list.html"
