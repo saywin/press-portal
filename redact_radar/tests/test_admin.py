@@ -50,4 +50,7 @@ class NewspaperAdminSiteTests(TestCase):
         self.assertIn("title", site._registry[Newspaper].search_fields)
 
     def test_admin_ordering(self):
-        self.assertEqual(site._registry[Newspaper].ordering, ("-published_date",))
+        self.assertEqual(
+            site._registry[Newspaper].ordering,
+            ("-published_date",)
+        )

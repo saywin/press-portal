@@ -1,8 +1,13 @@
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 
-from redact_radar.forms import RedactorCreateForm, RedactorUpdateForm, NewspaperSearchForm, NewspaperUpdateForm, \
-    NewspaperCreateForm
+from redact_radar.forms import (
+    RedactorCreateForm,
+    RedactorUpdateForm,
+    NewspaperSearchForm,
+    NewspaperUpdateForm,
+    NewspaperCreateForm,
+)
 from redact_radar.models import Newspaper, Topic
 
 
