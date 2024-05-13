@@ -78,7 +78,7 @@ class NewspaperDetailView(generic.DetailView):
     model = Newspaper
 
 
-class TopicListView(generic.ListView):
+class TopicListView(LoginRequiredMixin, generic.ListView):
     model = Topic
     template_name = "redact_radar/topic_list.html"
     context_object_name = "topic_list"
@@ -86,7 +86,7 @@ class TopicListView(generic.ListView):
     queryset = Topic.objects.prefetch_related("newspapers")
 
 
-class TopicDetailView(generic.DetailView):
+class TopicDetailView(LoginRequiredMixin, generic.DetailView):
     model = Topic
     queryset = Topic.objects.prefetch_related("newspapers")
 
