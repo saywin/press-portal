@@ -1,8 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
-from django.core.exceptions import ValidationError
-from validate_email import validate_email
 
 from redact_radar.models import Redactor, Newspaper, Topic
 
