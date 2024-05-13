@@ -1,5 +1,5 @@
 from django.contrib.auth.models import AbstractUser
-from django.core.validators import MinValueValidator
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
 from press_portal import settings
@@ -37,7 +37,8 @@ class Topic(models.Model):
 
 class Redactor(AbstractUser):
     years_of_experience = models.IntegerField(
-        validators=[MinValueValidator(0)],
+        validators=[MinValueValidator(0),
+                    MaxValueValidator(50)],
         default=0
     )
 
