@@ -23,6 +23,13 @@ class IndexView(generic.ListView):
             "num_redactors": Redactor.objects.count(),
         }
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["num_newspapers"] = Newspaper.objects.count()
+        context["num_topics"] = Topic.objects.count()
+        context["num_redactors"] = Redactor.objects.count()
+        return context
+
 
 class NewspaperListView(generic.ListView):
     model = Newspaper
