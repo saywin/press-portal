@@ -18,12 +18,6 @@ class NewspaperAdmin(admin.ModelAdmin):
     get_topics.short_description = "Topics"
 
 
-@admin.register(Topic)
-class TopicAdmin(admin.ModelAdmin):
-    list_display = ("name", )
-    search_fields = ("name", )
-
-
 @admin.register(Redactor)
 class RedactorAdmin(UserAdmin):
     list_display = UserAdmin.list_display + ("years_of_experience", )
@@ -35,3 +29,6 @@ class RedactorAdmin(UserAdmin):
     )
     search_fields = ("username", )
     ordering = ("username", )
+
+
+admin.site.register(Topic)
