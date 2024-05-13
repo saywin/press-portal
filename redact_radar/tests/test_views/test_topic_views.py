@@ -36,10 +36,10 @@ class PrivateTopicViewTests(TestCase):
         self.assertTemplateUsed(self.response, "redact_radar/topic_list.html")
 
     def test_topic_context(self):
-        manufacturers = Topic.objects.all()
+        topics = Topic.objects.all()
         self.assertEqual(
             list(self.response.context["topic_list"]),
-            list(manufacturers)
+            list(topics)
         )
 
     def test_topic_paginate(self):
