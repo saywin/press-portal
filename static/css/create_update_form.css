@@ -5,9 +5,9 @@ html, body {
 body {
     background-color: white;
     background-image: url("../img/newspaper-list.jpg");
-    background-size: revert;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-size: inherit;
+    /*background-position: center;*/
+    /*background-repeat: no-repeat;*/
 }
 
 .title {

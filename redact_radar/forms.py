@@ -1,14 +1,10 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
+from django.core.exceptions import ValidationError
+from validate_email import validate_email
 
 from redact_radar.models import Redactor, Newspaper, Topic
-
-
-class CustomCheckboxField(forms.ModelMultipleChoiceField):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.widget = forms.CheckboxSelectMultiple()
 
 
 class RedactorCreateForm(UserCreationForm):
@@ -28,7 +24,7 @@ class RedactorUpdateForm(forms.ModelForm):
         fields = ("first_name", "last_name", "years_of_experience",)
 
 
-class NewspaperCreateForm(forms.ModelForm):
+class BaseNewspaperForm(forms.ModelForm):
     dish_type = forms.ModelMultipleChoiceField(
         queryset=Topic.objects.all(),
         widget=forms.CheckboxSelectMultiple,
@@ -41,6 +37,14 @@ class NewspaperCreateForm(forms.ModelForm):
     class Meta:
         model = Newspaper
         fields = "__all__"
+
+
+class NewspaperCreateForm(BaseNewspaperForm):
+    pass
+
+
+class NewspaperUpdateForm(BaseNewspaperForm):
+    pass
 
 
 class NewspaperSearchForm(forms.Form):

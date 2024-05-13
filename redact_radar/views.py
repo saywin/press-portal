@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -5,7 +6,8 @@ from redact_radar.forms import (
     RedactorCreateForm,
     RedactorUpdateForm,
     NewspaperCreateForm,
-    NewspaperSearchForm
+    NewspaperSearchForm,
+    NewspaperUpdateForm,
 )
 from redact_radar.models import Newspaper, Topic, Redactor
 
@@ -45,21 +47,21 @@ class NewspaperListView(generic.ListView):
         return self.queryset
 
 
-class NewspaperCreateView(generic.CreateView):
+class NewspaperCreateView(LoginRequiredMixin, generic.CreateView):
     model = Newspaper
     form_class = NewspaperCreateForm
     template_name = "redact_radar/newspaper_form.html"
     success_url = reverse_lazy("redact_radar:newspaper-list")
 
 
-class NewspaperUpdateView(generic.UpdateView):
+class NewspaperUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Newspaper
-    fields = "__all__"
+    form_class = NewspaperUpdateForm
     template_name = "redact_radar/newspaper_form.html"
     success_url = reverse_lazy("redact_radar:newspaper-list")
 
 
-class NewspaperDeleteView(generic.DeleteView):
+class NewspaperDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Newspaper
     success_url = reverse_lazy("redact_radar:newspaper-list")
     template_name = "redact_radar/newspaper_confirm_delete.html"
@@ -82,45 +84,45 @@ class TopicDetailView(generic.DetailView):
     queryset = Topic.objects.prefetch_related("newspapers")
 
 
-class TopicCreateView(generic.CreateView):
+class TopicCreateView(LoginRequiredMixin, generic.CreateView):
     model = Topic
     fields = "__all__"
     template_name = "redact_radar/topic_form.html"
     success_url = reverse_lazy("redact_radar:topic-list")
 
 
-class TopicUpdateView(generic.UpdateView):
+class TopicUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Topic
     fields = "__all__"
     template_name = "redact_radar/topic_form.html"
     success_url = reverse_lazy("redact_radar:topic-list")
 
 
-class TopicDeleteView(generic.DeleteView):
+class TopicDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Topic
     success_url = reverse_lazy("redact_radar:topic-list")
     template_name = "redact_radar/topic_confirm_delete.html"
 
 
-class RedactorListView(generic.ListView):
+class RedactorListView(LoginRequiredMixin, generic.ListView):
     model = Redactor
     template_name = "redact_radar/redactor_list.html"
     context_object_name = "redactor_list"
     paginate_by = 3
 
 
-class RedactorDetailView(generic.DetailView):
+class RedactorDetailView(LoginRequiredMixin, generic.DetailView):
     model = Redactor
 
 
-class RedactorCreateView(generic.CreateView):
+class RedactorCreateView(LoginRequiredMixin, generic.CreateView):
     model = Redactor
     form_class = RedactorCreateForm
     template_name = "redact_radar/redactor_form.html"
     success_url = reverse_lazy("redact_radar:redactor-list")
 
 
-class RedactorUpdateView(generic.UpdateView):
+class RedactorUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Redactor
     form_class = RedactorUpdateForm
     template_name = "redact_radar/redactor_form.html"
