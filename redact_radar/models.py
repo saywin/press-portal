@@ -19,7 +19,7 @@ class Newspaper(models.Model):
     )
 
     class Meta:
-        ordering = ("title",)
+        ordering = ("published_date",)
 
     def __str__(self):
         return f"title: {self.title}, topic: {self.dish_type}"
